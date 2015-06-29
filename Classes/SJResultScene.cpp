@@ -100,9 +100,7 @@ void SJResult::start(const std::vector<Touch*>& touches, Event  *event)
 
 void SJResult::home(const std::vector<Touch*>& touches, Event  *event)
 {
-    auto gameVC=SJGame::createScene();
-    SJGame *g=(SJGame*)gameVC->getChildByTag(88);
-    g->count=this->ballCount;
+    auto gameVC=SJIndex::createScene();
     
     TransitionScene *reScene=NULL;
     reScene=CCTransitionJumpZoom::create(0.5, gameVC);
