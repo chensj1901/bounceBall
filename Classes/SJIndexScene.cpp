@@ -34,8 +34,13 @@ bool SJIndex::init(){
 //    auto startBtn=ControlButton::create();
 //    startBtn->addTargetWithActionForControlEvents(this, cccontrol_selector(SJIndex::start), Control::EventType::TOUCH_UP_INSIDE);
 
+    auto titleLabel=Label::createWithTTF("谁能不碰壁", "fonts/hyz.ttf", 48);
+    titleLabel->setPosition(size.width/2,size.height/4*3);
+    titleLabel->setTextColor(ccc4(0, 0, 0, 255));
+    this->addChild(titleLabel,1);
+    
     auto startBtn=Sprite::create("startBtn.png");
-    startBtn->setPosition(Vec2(size.width/2, size.height/2));
+    startBtn->setPosition(Vec2(size.width/2, size.height/4));
     this->addChild(startBtn,1);
     
     
