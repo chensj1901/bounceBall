@@ -44,16 +44,24 @@ bool SJIndex::init(){
     this->addChild(startBtn,1);
     
     
-    auto listener1 = EventListenerTouchAllAtOnce::create();//创建一个触摸监听
-    listener1->onTouchesBegan =CC_CALLBACK_2(SJIndex::start,this);
+    auto listener1 = EventListenerTouchOneByOne::create();//创建一个触摸监听
+    listener1->onTouchBegan =CC_CALLBACK_2(SJIndex::start,this);
     Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener1, startBtn);
 
     return true;
 }
 
 
-void SJIndex::start(const std::vector<Touch*>& touches, Event  *event)
-{
+bool SJIndex::start(Touch*touch
+                    , cocos2d::Event  *event)
+{auto target = static_cast<Sprite*>(event->getCurrentTarget());
+    
+    Point locationInNode = target->convertToNodeSpace(touch->getLocation());
+    Size s = target->getContentSize();
+    Rect rect = Rect(0, 0, s.width, s.height);
+    
+    if (rect.containsPoint(locationInNode))
+    {
     auto gameVC=SJGame::createScene();
     SJGame *g=(SJGame*)gameVC->getChildByTag(88);
     g->count=2;
@@ -62,4 +70,7 @@ void SJIndex::start(const std::vector<Touch*>& touches, Event  *event)
     reScene=CCTransitionJumpZoom::create(0.5, gameVC);
 //    gameVC:;
     Director::getInstance()->replaceScene(reScene);
+        return true;
+    }
+    return false;
 }

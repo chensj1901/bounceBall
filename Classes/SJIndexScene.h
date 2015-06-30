@@ -22,7 +22,8 @@ public:
     // Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
     virtual bool init();
     
-    void start(const std::vector<cocos2d::Touch*>& touches, cocos2d::Event  *event);
+    bool start(cocos2d::Touch*touch
+               , cocos2d::Event  *event);
 
     
     // implement the "static create()" method manually

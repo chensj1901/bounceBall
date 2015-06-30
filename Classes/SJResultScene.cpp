@@ -76,18 +76,28 @@ void SJResult::onEnterTransitionDidFinish(){
     this->addChild(homeBtn,1);
     
     
-    auto listener1 = EventListenerTouchAllAtOnce::create();//创建一个触摸监听
-    listener1->onTouchesBegan =CC_CALLBACK_2(SJResult::start,this);
+    auto listener1 = EventListenerTouchOneByOne::create();//创建一个触摸监听
+    listener1->setSwallowTouches(true);
+    listener1->onTouchBegan = CC_CALLBACK_2(SJResult::start, this);
     Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener1, startBtn);
     
-    auto listener2 = EventListenerTouchAllAtOnce::create();//创建一个触摸监听
-    listener2->onTouchesBegan =CC_CALLBACK_2(SJResult::home,this);
+    auto listener2 = EventListenerTouchOneByOne::create();//创建一个触摸监听
+    listener2->setSwallowTouches(true);
+    listener2->onTouchBegan =CC_CALLBACK_2(SJResult::home,this);
     Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener2, homeBtn);
     
 }
 
-void SJResult::start(const std::vector<Touch*>& touches, Event  *event)
+bool SJResult::start(Touch *touch, Event *event)
 {
+    auto target = static_cast<Sprite*>(event->getCurrentTarget());
+    
+    Point locationInNode = target->convertToNodeSpace(touch->getLocation());
+    Size s = target->getContentSize();
+    Rect rect = Rect(0, 0, s.width, s.height);
+    
+    if (rect.containsPoint(locationInNode))
+    {
     auto gameVC=SJGame::createScene();
     SJGame *g=(SJGame*)gameVC->getChildByTag(88);
     g->count=this->ballCount;
@@ -96,14 +106,27 @@ void SJResult::start(const std::vector<Touch*>& touches, Event  *event)
     reScene=CCTransitionJumpZoom::create(0.5, gameVC);
     //    gameVC:;
     Director::getInstance()->replaceScene(reScene);
+    return true;
+    }
+    return false;
 }
 
-void SJResult::home(const std::vector<Touch*>& touches, Event  *event)
+bool SJResult::home(cocos2d::Touch* touch, cocos2d::Event  *event)
 {
+    auto target = static_cast<Sprite*>(event->getCurrentTarget());
+    
+    Point locationInNode = target->convertToNodeSpace(touch->getLocation());
+    Size s = target->getContentSize();
+    Rect rect = Rect(0, 0, s.width, s.height);
+    
+    if (rect.containsPoint(locationInNode))
+    {
     auto gameVC=SJIndex::createScene();
     
     TransitionScene *reScene=NULL;
     reScene=CCTransitionJumpZoom::create(0.5, gameVC);
     //    gameVC:;
     Director::getInstance()->replaceScene(reScene);
-}
+        return true;
+    }
+    return false;}

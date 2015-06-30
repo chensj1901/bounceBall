@@ -26,9 +26,9 @@ public:
     
     void onEnterTransitionDidFinish();
     
-    void start(const std::vector<cocos2d::Touch*>& touches, cocos2d::Event  *event);
+    virtual bool start(cocos2d::Touch* touch, cocos2d::Event  *event);
     
-    void home(const std::vector<cocos2d::Touch*>& touches, cocos2d::Event  *event);
+    virtual bool home(cocos2d::Touch* touch, cocos2d::Event  *event);
     
     int top;
     int mark;
