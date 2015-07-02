@@ -30,6 +30,7 @@ public:
     long count;
 protected:
     int mark;
+    int coin;
     int timeStep;
     int nextPlayStep[200];
     cocos2d::Array *things;
@@ -39,6 +40,7 @@ protected:
     cocos2d::SpriteBatchNode *thingsBatch;
     cocos2d::Label *markLabel;
     cocos2d::Label *topLabel;
+    cocos2d::Label *coinLabel;
     // implement the "static create()" method manually
 
     CREATE_FUNC(SJGame);

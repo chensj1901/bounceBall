@@ -11,6 +11,11 @@
 #include "CCShake.h"
 #include "SJResultScene.h"
 
+typedef enum {
+    SJObjectTagTypeCoin=50,
+    SJObjectTagTypeObstacles=40
+}SJObjectTagType;
+
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
 //iOS代码
 #include "SJAdsController.h"
@@ -74,13 +79,32 @@ void SJGame::update(float delta) {
     Sprite *ball=(Sprite*)this->balls->getObjectAtIndex(ballIndex);
         
     float padding=HEIGHT/count;
-    if (timeStep==nextPlayStep[ballIndex]) {
+    
+    BOOL shouldShowCoin=NO;
+    for (int shoundTime=3; shoundTime<10; shoundTime++) {
+        if (timeStep==nextPlayStep[ballIndex]-5*shoundTime) {
+            shouldShowCoin=YES;
+        }
+    }
+        
+    if (shouldShowCoin&& CCRANDOM_0_1()<0.5) {
+        //金币
+        auto obstacles=Sprite::create("coin.png");
+        this->addChild(obstacles,5);
+        cocos2d::Size size = obstacles->getBoundingBox().size;
+        obstacles->setPosition(Vec2(WIDTH,FLOOR_OFFSET_Y+ballIndex*padding+size.height/2+40));
+        obstacles->setTag(SJObjectTagTypeCoin);
+        things->addObject(obstacles);
+    }
+        
+    if (timeStep==nextPlayStep[ballIndex]) {//障碍物
         nextPlayStep[ballIndex]+=70+CCRANDOM_0_1()*80*(CCRANDOM_0_1()<0.5?1:2);
         auto obstacles=Sprite::createWithTexture(thingsBatch->getTexture());
         thingsBatch->addChild(obstacles);
         obstacles->setScale(1+1*CCRANDOM_0_1(), 5+5*CCRANDOM_0_1());
         cocos2d::Size size = obstacles->getBoundingBox().size;
         obstacles->setPosition(Vec2(WIDTH,FLOOR_OFFSET_Y+ballIndex*padding+size.height/2));
+        obstacles->setTag(SJObjectTagTypeObstacles);
         things->addObject(obstacles);
     }
         
@@ -89,26 +113,30 @@ void SJGame::update(float delta) {
             Sprite* obstacles=(Sprite*)things->getObjectAtIndex(j);
             
             if(obstacles->getBoundingBox().intersectsRect(ball->getBoundingBox())){
-//                obstacles->removeFromParent();
-//                things->removeObject(obstacles);
-//                j--;
                 
-                this->unscheduleUpdate();
-                
-                CCShake *shake=CCShake::create(count*0.5+2, 20);
-                CallFunc *func=CallFunc::create(this, callfunc_selector(SJGame::gameOver));
-                Sequence *seq=Sequence::create(shake,func, NULL);
-                this->runAction(seq);
-                
-                
-//                obstacles->runAction(moveTo);
-                for (int ballI=0; ballI<balls->count(); ballI++) {
-                    Sprite *ballSpriteI=(Sprite*)this->balls->getObjectAtIndex(ballI);
-                    CCActionInterval *moveTo=MoveTo::create(1, Vec2(CCRANDOM_0_1()*200,-100));
-                    CCActionInterval * easeExponentialIn= CCEaseExponentialIn::create(moveTo);
-                    CCActionInterval * deyal=CCDelayTime::create(ballI*1);
-                    Sequence *seqI=Sequence::create(deyal,easeExponentialIn, NULL);
-                    ballSpriteI->runAction(seqI);
+                if (obstacles->getTag()==SJObjectTagTypeObstacles) {
+                    this->unscheduleUpdate();
+                    CCShake *shake=CCShake::create(count*0.5+2, 20);
+                    CallFunc *func=CallFunc::create(this, callfunc_selector(SJGame::gameOver));
+                    Sequence *seq=Sequence::create(shake,func, NULL);
+                    this->runAction(seq);
+                    
+                    for (int ballI=0; ballI<balls->count(); ballI++) {
+                        Sprite *ballSpriteI=(Sprite*)this->balls->getObjectAtIndex(ballI);
+                        CCActionInterval *moveTo=MoveTo::create(1, Vec2(CCRANDOM_0_1()*200,-100));
+                        CCActionInterval * easeExponentialIn= CCEaseExponentialIn::create(moveTo);
+                        CCActionInterval * deyal=CCDelayTime::create(ballI*1);
+                        Sequence *seqI=Sequence::create(deyal,easeExponentialIn, NULL);
+                        ballSpriteI->runAction(seqI);
+                    }
+                }else{
+                    obstacles->removeFromParent();
+                    things->removeObject(obstacles);
+                    
+                    coin++;
+                    String *s=String::createWithFormat("金币：%d",this->coin);
+                    this->coinLabel->setString(s->getCString());
+                    
                 }
 
             }
@@ -140,6 +168,10 @@ void SJGame::gameOver(){
     if (this->mark>UserDefault::getInstance()->getIntegerForKey("topMark")) {
         UserDefault::getInstance()->setIntegerForKey("topMark", this->mark);
     }
+    
+    int coinHistory=UserDefault::getInstance()->getIntegerForKey("coinCount");
+    UserDefault::getInstance()->setIntegerForKey("coinCount", this->coin+coinHistory);
+    
     SJResult *result=(SJResult*)resultVC->getChildByTag(88);
     result->top=UserDefault::getInstance()->getIntegerForKey("topMark");
     result->mark=this->mark;
@@ -226,11 +258,16 @@ void SJGame::onEnterTransitionDidFinish(){
     
     int topMark=UserDefault::getInstance()->getIntegerForKey("topMark");
     String *s=String::createWithFormat("zui高分：%d",topMark);
-    
     topLabel=Label::createWithTTF(s->getCString(), "fonts/hyz.ttf", 28);
     topLabel->setPosition(100, HEIGHT-100);
     topLabel->setTextColor(ccc4(0, 0, 0, 255));
     this->addChild(topLabel,5);
+    
+    
+    coinLabel=Label::createWithTTF("金币：0", "fonts/hyz.ttf", 28);
+    coinLabel->setPosition(WIDTH-200, HEIGHT-100);
+    coinLabel->setTextColor(ccc4(0, 0, 0, 255));
+    this->addChild(coinLabel,5);
     
     this->scheduleUpdate();
 //    ;

@@ -8,6 +8,7 @@
 
 #include "SJIndexScene.h"
 #include "SJGameScene.h"
+#include "config.h"
 
 USING_NS_CC;
 using namespace cocos2d::extension;
@@ -43,6 +44,12 @@ bool SJIndex::init(){
     startBtn->setPosition(Vec2(size.width/2, size.height/4));
     this->addChild(startBtn,1);
     
+    int coinCount = UserDefault::getInstance()->getIntegerForKey("coinCount");
+    String *s=String ::createWithFormat("金币：%d",coinCount);
+    auto coinLabel=Label::createWithTTF(s->getCString(), "fonts/hyz.ttf", 28);
+    coinLabel->setPosition(WIDTH/2, HEIGHT/2);
+    coinLabel->setTextColor(ccc4(0, 0, 0, 255));
+    this->addChild(coinLabel,5);
     
     auto listener1 = EventListenerTouchOneByOne::create();//创建一个触摸监听
     listener1->onTouchBegan =CC_CALLBACK_2(SJIndex::start,this);

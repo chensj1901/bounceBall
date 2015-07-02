@@ -74,6 +74,8 @@
 		335AB3EE1B3D817F00234DCC /* startBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 335AB3EA1B3D817F00234DCC /* startBtn.png */; };
 		335AB3F01B3D819700234DCC /* floor.png in Resources */ = {isa = PBXBuildFile; fileRef = 335AB3EF1B3D819700234DCC /* floor.png */; };
 		335AB3F11B3D819700234DCC /* floor.png in Resources */ = {isa = PBXBuildFile; fileRef = 335AB3EF1B3D819700234DCC /* floor.png */; };
+		33AB68011B43AC45000428E0 /* coin.png in Resources */ = {isa = PBXBuildFile; fileRef = 33AB68001B43AC45000428E0 /* coin.png */; };
+		33AB68021B43AC45000428E0 /* coin.png in Resources */ = {isa = PBXBuildFile; fileRef = 33AB68001B43AC45000428E0 /* coin.png */; };
 		33BBA5341B3E9AAF00B38793 /* ball.png in Resources */ = {isa = PBXBuildFile; fileRef = 33BBA5331B3E9AAF00B38793 /* ball.png */; };
 		33BBA53A1B3E9C1300B38793 /* blackBlock.png in Resources */ = {isa = PBXBuildFile; fileRef = 33BBA5391B3E9C1300B38793 /* blackBlock.png */; };
 		33BBA53B1B3E9C1300B38793 /* blackBlock.png in Resources */ = {isa = PBXBuildFile; fileRef = 33BBA5391B3E9C1300B38793 /* blackBlock.png */; };
@@ -239,6 +241,7 @@
 		335AB3E91B3D817F00234DCC /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		335AB3EA1B3D817F00234DCC /* startBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = startBtn.png; sourceTree = "<group>"; };
 		335AB3EF1B3D819700234DCC /* floor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = floor.png; sourceTree = "<group>"; };
+		33AB68001B43AC45000428E0 /* coin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coin.png; sourceTree = "<group>"; };
 		33BBA5331B3E9AAF00B38793 /* ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ball.png; sourceTree = "<group>"; };
 		33BBA5391B3E9C1300B38793 /* blackBlock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackBlock.png; sourceTree = "<group>"; };
 		33BBA53C1B3EAF5300B38793 /* CCShake.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCShake.cpp; sourceTree = "<group>"; };
@@ -514,6 +517,7 @@
 				46880B7A19C43A67006E1F66 /* HelloWorld.png */,
 				335AB3E91B3D817F00234DCC /* logo.png */,
 				335AB3EF1B3D819700234DCC /* floor.png */,
+				33AB68001B43AC45000428E0 /* coin.png */,
 				33BBA5331B3E9AAF00B38793 /* ball.png */,
 				335AB3EA1B3D817F00234DCC /* startBtn.png */,
 				33BBA5391B3E9C1300B38793 /* blackBlock.png */,
@@ -732,6 +736,7 @@
 				33047FB91B41319300B30238 /* adwo_videoClose.png in Resources */,
 				46880B8119C43A67006E1F66 /* HelloWorld.png in Resources */,
 				46880B7D19C43A67006E1F66 /* CloseSelected.png in Resources */,
+				33AB68011B43AC45000428E0 /* coin.png in Resources */,
 				33047FCA1B41319300B30238 /* adwo_videoSound.png in Resources */,
 				33BBA53A1B3E9C1300B38793 /* blackBlock.png in Resources */,
 				33047FCD1B41319300B30238 /* adwo_videoTimeRectangleBig.png in Resources */,
@@ -781,6 +786,7 @@
 				46880B8219C43A67006E1F66 /* HelloWorld.png in Resources */,
 				335AB3EE1B3D817F00234DCC /* startBtn.png in Resources */,
 				503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */,
+				33AB68021B43AC45000428E0 /* coin.png in Resources */,
 				3EACC99019EE6D4300EB3C5E /* res in Resources */,
 				33047FDB1B417A2300B30238 /* homeBtn.png in Resources */,
 				33047FD91B417A2300B30238 /* againBtn.png in Resources */,
