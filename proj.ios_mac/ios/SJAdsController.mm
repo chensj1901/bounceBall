@@ -71,6 +71,7 @@ static SJAdsController *_adsController;
     NSLog(@"%@",NSStringFromCGRect(adMoGoView.frame));
     CGRect frame=adMoGoView.frame;
     frame.origin.y=[UIScreen mainScreen].bounds.size.height-50;
+    frame.origin.x=([UIScreen mainScreen].bounds.size.height-frame.size.width)/2;
     adMoGoView.frame=frame;
     NSLog(@"广告接收成功回调");
 }

@@ -41,8 +41,24 @@ bool SJIndex::init(){
     this->addChild(titleLabel,1);
     
     auto startBtn=Sprite::create("startBtn.png");
-    startBtn->setPosition(Vec2(size.width/2, size.height/4));
+    startBtn->setPosition(Vec2(size.width/3, size.height/4));
+    startBtn->setTag(2);
     this->addChild(startBtn,1);
+    
+    auto startBtn2=Sprite::create("startBtn.png");
+    startBtn2->setPosition(Vec2(size.width/3*2, size.height/4));
+    startBtn2->setTag(3);
+    this->addChild(startBtn2,1);
+    
+    auto startBtn3=Sprite::create("startBtn.png");
+    startBtn3->setPosition(Vec2(size.width/3, size.height/6));
+    startBtn3->setTag(4);
+    this->addChild(startBtn3,1);
+    
+    auto startBtn4=Sprite::create("startBtn.png");
+    startBtn4->setPosition(Vec2(size.width/3*2, size.height/6));
+    startBtn4->setTag(5);
+    this->addChild(startBtn4,1);
     
     int coinCount = UserDefault::getInstance()->getIntegerForKey("coinCount");
     String *s=String ::createWithFormat("金币：%d",coinCount);
@@ -54,6 +70,19 @@ bool SJIndex::init(){
     auto listener1 = EventListenerTouchOneByOne::create();//创建一个触摸监听
     listener1->onTouchBegan =CC_CALLBACK_2(SJIndex::start,this);
     Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener1, startBtn);
+    
+    
+    auto listener2 = EventListenerTouchOneByOne::create();//创建一个触摸监听
+    listener2->onTouchBegan =CC_CALLBACK_2(SJIndex::start,this);
+    Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener2, startBtn2);
+    
+    auto listener3 = EventListenerTouchOneByOne::create();//创建一个触摸监听
+    listener3->onTouchBegan =CC_CALLBACK_2(SJIndex::start,this);
+    Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener3, startBtn3);
+    
+    auto listener4 = EventListenerTouchOneByOne::create();//创建一个触摸监听
+    listener4->onTouchBegan =CC_CALLBACK_2(SJIndex::start,this);
+    Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener4, startBtn4);
 
     return true;
 }
@@ -61,7 +90,8 @@ bool SJIndex::init(){
 
 bool SJIndex::start(Touch*touch
                     , cocos2d::Event  *event)
-{auto target = static_cast<Sprite*>(event->getCurrentTarget());
+{
+    auto target = static_cast<Sprite*>(event->getCurrentTarget());
     
     Point locationInNode = target->convertToNodeSpace(touch->getLocation());
     Size s = target->getContentSize();
@@ -69,9 +99,10 @@ bool SJIndex::start(Touch*touch
     
     if (rect.containsPoint(locationInNode))
     {
+    int tag=target->getTag();
     auto gameVC=SJGame::createScene();
     SJGame *g=(SJGame*)gameVC->getChildByTag(88);
-    g->count=2;
+    g->count=tag;
     
     TransitionScene *reScene=NULL;
     reScene=CCTransitionJumpZoom::create(0.5, gameVC);

@@ -38,7 +38,7 @@
 static AppDelegate s_sharedApplication;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [MobClick event:@"5591409667e58ea955000ff4"];
+    [MobClick startWithAppkey:@"5591409667e58ea955000ff4"];
 
     cocos2d::Application *app = cocos2d::Application::getInstance();
     app->initGLContextAttrs();
