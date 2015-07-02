@@ -11,6 +11,14 @@
 		046EA48C1B368BA900660B04 /* SJIndexScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0498378E1B356BF500059EF3 /* SJIndexScene.cpp */; };
 		046EA48D1B368BA900660B04 /* SJGameScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = 046EA4891B36884600660B04 /* SJGameScene.mm */; };
 		049837901B356BF500059EF3 /* SJIndexScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0498378E1B356BF500059EF3 /* SJIndexScene.cpp */; };
+		049B04FA1B458E1C00D92A45 /* easy.png in Resources */ = {isa = PBXBuildFile; fileRef = 049B04F61B458E1C00D92A45 /* easy.png */; };
+		049B04FB1B458E1C00D92A45 /* easy.png in Resources */ = {isa = PBXBuildFile; fileRef = 049B04F61B458E1C00D92A45 /* easy.png */; };
+		049B04FC1B458E1C00D92A45 /* hard.png in Resources */ = {isa = PBXBuildFile; fileRef = 049B04F71B458E1C00D92A45 /* hard.png */; };
+		049B04FD1B458E1C00D92A45 /* hard.png in Resources */ = {isa = PBXBuildFile; fileRef = 049B04F71B458E1C00D92A45 /* hard.png */; };
+		049B04FE1B458E1C00D92A45 /* middle.png in Resources */ = {isa = PBXBuildFile; fileRef = 049B04F81B458E1C00D92A45 /* middle.png */; };
+		049B04FF1B458E1C00D92A45 /* middle.png in Resources */ = {isa = PBXBuildFile; fileRef = 049B04F81B458E1C00D92A45 /* middle.png */; };
+		049B05001B458E1C00D92A45 /* veryHard.png in Resources */ = {isa = PBXBuildFile; fileRef = 049B04F91B458E1C00D92A45 /* veryHard.png */; };
+		049B05011B458E1C00D92A45 /* veryHard.png in Resources */ = {isa = PBXBuildFile; fileRef = 049B04F91B458E1C00D92A45 /* veryHard.png */; };
 		1AC6FB21180E996B004C840B /* libcocos2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FAF9180E9839004C840B /* libcocos2d Mac.a */; };
 		1AC6FB30180E99EB004C840B /* libcocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB07180E9839004C840B /* libcocos2d iOS.a */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -176,6 +184,10 @@
 		046EA48E1B3690CA00660B04 /* config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
 		0498378E1B356BF500059EF3 /* SJIndexScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SJIndexScene.cpp; sourceTree = "<group>"; };
 		0498378F1B356BF500059EF3 /* SJIndexScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJIndexScene.h; sourceTree = "<group>"; };
+		049B04F61B458E1C00D92A45 /* easy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = easy.png; sourceTree = "<group>"; };
+		049B04F71B458E1C00D92A45 /* hard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hard.png; sourceTree = "<group>"; };
+		049B04F81B458E1C00D92A45 /* middle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = middle.png; sourceTree = "<group>"; };
+		049B04F91B458E1C00D92A45 /* veryHard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = veryHard.png; sourceTree = "<group>"; };
 		1AC6FAE5180E9839004C840B /* cocos2d_libs.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2d_libs.xcodeproj; path = ../cocos2d/build/cocos2d_libs.xcodeproj; sourceTree = "<group>"; };
 		1ACB3243164770DE00914215 /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = ../../cocos2dx/platform/third_party/ios/libraries/libcurl.a; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -518,6 +530,10 @@
 				335AB3E91B3D817F00234DCC /* logo.png */,
 				335AB3EF1B3D819700234DCC /* floor.png */,
 				33AB68001B43AC45000428E0 /* coin.png */,
+				049B04F61B458E1C00D92A45 /* easy.png */,
+				049B04F71B458E1C00D92A45 /* hard.png */,
+				049B04F81B458E1C00D92A45 /* middle.png */,
+				049B04F91B458E1C00D92A45 /* veryHard.png */,
 				33BBA5331B3E9AAF00B38793 /* ball.png */,
 				335AB3EA1B3D817F00234DCC /* startBtn.png */,
 				33BBA5391B3E9C1300B38793 /* blackBlock.png */,
@@ -712,6 +728,7 @@
 				5087E78117EB970100C73F5D /* Icon-120.png in Resources */,
 				33047FAA1B41319300B30238 /* adwo_audioBar.png in Resources */,
 				33047FB11B41319300B30238 /* adwo_downloadtoalbum.png in Resources */,
+				049B04FE1B458E1C00D92A45 /* middle.png in Resources */,
 				33047FB21B41319300B30238 /* adwo_progress.png in Resources */,
 				335AB3F01B3D819700234DCC /* floor.png in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
@@ -751,6 +768,8 @@
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
 				50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */,
 				33047FC41B41319300B30238 /* adwo_videoMinimizeBig.png in Resources */,
+				049B05001B458E1C00D92A45 /* veryHard.png in Resources */,
+				049B04FA1B458E1C00D92A45 /* easy.png in Resources */,
 				50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */,
 				33047FC21B41319300B30238 /* adwo_videoMaximizeBig.png in Resources */,
 				33047FC81B41319300B30238 /* adwo_videoReplay.png in Resources */,
@@ -767,6 +786,7 @@
 				33047FB81B41319300B30238 /* adwo_uploadProgress.png in Resources */,
 				5087E77E17EB970100C73F5D /* Default.png in Resources */,
 				33047FBF1B41319300B30238 /* adwo_videoLogo.png in Resources */,
+				049B04FC1B458E1C00D92A45 /* hard.png in Resources */,
 				46880B7B19C43A67006E1F66 /* CloseNormal.png in Resources */,
 				33047FBB1B41319300B30238 /* adwo_videoCloseBtn.png in Resources */,
 				50EF629717ECD46A001EB2F8 /* Icon-58.png in Resources */,
@@ -784,13 +804,17 @@
 				335AB3F11B3D819700234DCC /* floor.png in Resources */,
 				33BBA53B1B3E9C1300B38793 /* blackBlock.png in Resources */,
 				46880B8219C43A67006E1F66 /* HelloWorld.png in Resources */,
+				049B04FF1B458E1C00D92A45 /* middle.png in Resources */,
 				335AB3EE1B3D817F00234DCC /* startBtn.png in Resources */,
 				503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */,
 				33AB68021B43AC45000428E0 /* coin.png in Resources */,
 				3EACC99019EE6D4300EB3C5E /* res in Resources */,
 				33047FDB1B417A2300B30238 /* homeBtn.png in Resources */,
 				33047FD91B417A2300B30238 /* againBtn.png in Resources */,
+				049B04FD1B458E1C00D92A45 /* hard.png in Resources */,
+				049B05011B458E1C00D92A45 /* veryHard.png in Resources */,
 				521A8EAA19F11F5000D177D7 /* fonts in Resources */,
+				049B04FB1B458E1C00D92A45 /* easy.png in Resources */,
 				335AB3EC1B3D817F00234DCC /* logo.png in Resources */,
 				46880B7C19C43A67006E1F66 /* CloseNormal.png in Resources */,
 				46880B7E19C43A67006E1F66 /* CloseSelected.png in Resources */,

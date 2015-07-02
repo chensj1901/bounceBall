@@ -40,22 +40,22 @@ bool SJIndex::init(){
     titleLabel->setTextColor(ccc4(0, 0, 0, 255));
     this->addChild(titleLabel,1);
     
-    auto startBtn=Sprite::create("startBtn.png");
+    auto startBtn=Sprite::create("easy.png");
     startBtn->setPosition(Vec2(size.width/3, size.height/4));
     startBtn->setTag(2);
     this->addChild(startBtn,1);
     
-    auto startBtn2=Sprite::create("startBtn.png");
+    auto startBtn2=Sprite::create("middle.png");
     startBtn2->setPosition(Vec2(size.width/3*2, size.height/4));
     startBtn2->setTag(3);
     this->addChild(startBtn2,1);
     
-    auto startBtn3=Sprite::create("startBtn.png");
+    auto startBtn3=Sprite::create("hard.png");
     startBtn3->setPosition(Vec2(size.width/3, size.height/6));
     startBtn3->setTag(4);
     this->addChild(startBtn3,1);
     
-    auto startBtn4=Sprite::create("startBtn.png");
+    auto startBtn4=Sprite::create("veryHard.png");
     startBtn4->setPosition(Vec2(size.width/3*2, size.height/6));
     startBtn4->setTag(5);
     this->addChild(startBtn4,1);
