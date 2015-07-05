@@ -46,12 +46,13 @@ void SJGame::update(float delta) {
         Sprite* obstacles=(Sprite*)things->getObjectAtIndex(j);
         obstacles->setPosition(obstacles->getPosition().x-10, obstacles->getPosition().y);
         
-        if (obstacles->getPositionX()<100&&obstacles->getPositionX()>=90) {
+        if (obstacles->getPositionX()<100&&obstacles->getPositionX()>=90&&obstacles->getTag()==SJObjectTagTypeObstacles) {
             this->mark++;
             String *s=String::createWithFormat("当前分数：%d",this->mark);
             this->markLabel->setString(s->getCString());
             
-            int topMark=UserDefault::getInstance()->getIntegerForKey("topMark");
+            auto topMarkStr=String::createWithFormat("topMark_%d",count);
+            int topMark=UserDefault::getInstance()->getIntegerForKey(topMarkStr->getCString());
             String *ss=String::createWithFormat("zui高分：%d",this->mark>topMark?this->mark:topMark);
             this->topLabel->setString(ss->getCString());
         }
@@ -87,7 +88,7 @@ void SJGame::update(float delta) {
         }
     }
         
-    if (shouldShowCoin&& CCRANDOM_0_1()<0.5) {
+    if (shouldShowCoin&& CCRANDOM_0_1()<0.3) {
         //金币
         auto obstacles=Sprite::create("coin.png");
         this->addChild(obstacles,5);
@@ -165,15 +166,17 @@ void SJGame::gameOver(){
     TransitionScene *reScene=NULL;
     reScene=CCTransitionJumpZoom::create(0.5, resultVC);
     //    gameVC:;
-    if (this->mark>UserDefault::getInstance()->getIntegerForKey("topMark")) {
-        UserDefault::getInstance()->setIntegerForKey("topMark", this->mark);
+    auto topMarkStr=String::createWithFormat("topMark_%d",count);
+    
+    if (this->mark>UserDefault::getInstance()->getIntegerForKey(topMarkStr->getCString())) {
+        UserDefault::getInstance()->setIntegerForKey(topMarkStr->getCString(), this->mark);
     }
     
     int coinHistory=UserDefault::getInstance()->getIntegerForKey("coinCount");
     UserDefault::getInstance()->setIntegerForKey("coinCount", this->coin+coinHistory);
     
     SJResult *result=(SJResult*)resultVC->getChildByTag(88);
-    result->top=UserDefault::getInstance()->getIntegerForKey("topMark");
+    result->top=UserDefault::getInstance()->getIntegerForKey(topMarkStr->getCString());
     result->mark=this->mark;
     result->ballCount=this->count;
     Director::getInstance()->replaceScene(reScene);
@@ -256,7 +259,8 @@ void SJGame::onEnterTransitionDidFinish(){
     markLabel->setTextColor(ccc4(0, 0, 0, 255));
     this->addChild(markLabel,5);
     
-    int topMark=UserDefault::getInstance()->getIntegerForKey("topMark");
+    auto topMarkStr=String::createWithFormat("topMark_%d",count);
+    int topMark=UserDefault::getInstance()->getIntegerForKey(topMarkStr->getCString());
     String *s=String::createWithFormat("zui高分：%d",topMark);
     topLabel=Label::createWithTTF(s->getCString(), "fonts/hyz.ttf", 28);
     topLabel->setPosition(100, HEIGHT-100);

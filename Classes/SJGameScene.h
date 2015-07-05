@@ -27,7 +27,7 @@ public:
 //    void onEnter();
     void onTouchesBegan(const std::vector<cocos2d::Touch*>& touches, cocos2d::Event  *event);
     void gameOver();
-    long count;
+    int count;
 protected:
     int mark;
     int coin;
