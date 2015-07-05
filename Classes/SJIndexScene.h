@@ -29,7 +29,10 @@ public:
                , cocos2d::Event  *event);
     
     bool ok(cocos2d::Touch*touch
-               , cocos2d::Event  *event);
+            , cocos2d::Event  *event);
+    
+    bool commentUs(cocos2d::Touch*touch
+            , cocos2d::Event  *event);
     
     cocos2d::Sprite* alertBox;
     cocos2d::Label* coinLabel;

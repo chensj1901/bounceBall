@@ -79,7 +79,7 @@ void SJGame::update(float delta) {
        
     Sprite *ball=(Sprite*)this->balls->getObjectAtIndex(ballIndex);
         
-    float padding=HEIGHT/count;
+    float padding=(HEIGHT-100)/count;
     
     BOOL shouldShowCoin=NO;
     for (int shoundTime=3; shoundTime<10; shoundTime++) {
@@ -102,7 +102,7 @@ void SJGame::update(float delta) {
         nextPlayStep[ballIndex]+=70+CCRANDOM_0_1()*80*(CCRANDOM_0_1()<0.5?1:2);
         auto obstacles=Sprite::createWithTexture(thingsBatch->getTexture());
         thingsBatch->addChild(obstacles);
-        obstacles->setScale(1+1*CCRANDOM_0_1(), 5+5*CCRANDOM_0_1());
+        obstacles->setScale(1+0.5*CCRANDOM_0_1(), 5+2.5*CCRANDOM_0_1());
         cocos2d::Size size = obstacles->getBoundingBox().size;
         obstacles->setPosition(Vec2(WIDTH,FLOOR_OFFSET_Y+ballIndex*padding+size.height/2));
         obstacles->setTag(SJObjectTagTypeObstacles);
@@ -231,7 +231,7 @@ void SJGame::onEnterTransitionDidFinish(){
     dispatcher->addEventListenerWithSceneGraphPriority(listener1, this);
     
     for (int i=0; i<this->count; i++) {
-        float padding=HEIGHT/count;
+        float padding=(HEIGHT-100)/count;
         
         Sprite* ball=Sprite::create("ball.png");
         ball->setPosition(100, FLOOR_OFFSET_Y+i*padding+ball->getBoundingBox().size.height/2);
@@ -255,7 +255,7 @@ void SJGame::onEnterTransitionDidFinish(){
     }
     
     markLabel=Label::createWithTTF("当前分数：0", "fonts/hyz.ttf", 28);
-    markLabel->setPosition(WIDTH/2, HEIGHT-100);
+    markLabel->setPosition(WIDTH/5, HEIGHT-20);
     markLabel->setTextColor(ccc4(0, 0, 0, 255));
     this->addChild(markLabel,5);
     
@@ -263,13 +263,13 @@ void SJGame::onEnterTransitionDidFinish(){
     int topMark=UserDefault::getInstance()->getIntegerForKey(topMarkStr->getCString());
     String *s=String::createWithFormat("zui高分：%d",topMark);
     topLabel=Label::createWithTTF(s->getCString(), "fonts/hyz.ttf", 28);
-    topLabel->setPosition(100, HEIGHT-100);
+    topLabel->setPosition(WIDTH/2, HEIGHT-20);
     topLabel->setTextColor(ccc4(0, 0, 0, 255));
     this->addChild(topLabel,5);
     
     
     coinLabel=Label::createWithTTF("金币：0", "fonts/hyz.ttf", 28);
-    coinLabel->setPosition(WIDTH-200, HEIGHT-100);
+    coinLabel->setPosition(WIDTH/5*4, HEIGHT-20);
     coinLabel->setTextColor(ccc4(0, 0, 0, 255));
     this->addChild(coinLabel,5);
     
@@ -290,18 +290,18 @@ void SJGame::onEnterTransitionDidFinish(){
 
 void SJGame::onTouchesBegan(const std::vector<Touch*>& touches, Event  *event)
 {
-    float padding=HEIGHT/count;
+    float padding=(HEIGHT-100)/count;
     for ( auto &item: touches )
     {
         auto touch = item;
         cocos2d::Point touchPoint=touch->getLocation();
-        int ballIndex= (touchPoint.y-FLOOR_OFFSET_Y)/(HEIGHT/count);
+        int ballIndex= (touchPoint.y-FLOOR_OFFSET_Y)/((HEIGHT-100)/count);
         
         Sprite *ball=(Sprite*)this->balls->getObjectAtIndex(ballIndex);
         
         CCFloat *ballVy0=(CCFloat*)this->balls_Vy0->getObjectAtIndex(ballIndex);
         if (ballVy0->getValue()<FLOOR_OFFSET_Y&&ball->getPosition().y<FLOOR_OFFSET_Y+10+ballIndex*padding+ball->getBoundingBox().size.height/2) {
-            this->balls_Vy0->setObject(CCFloat::create(13), ballIndex);
+            this->balls_Vy0->setObject(CCFloat::create(11), ballIndex);
         }
     }
 }

@@ -45,7 +45,6 @@ static AppDelegate s_sharedApplication;
     cocos2d::GLViewImpl::convertAttrs();
 
     // Override point for customization after application launch.
-
     // Add the view controller's view to the window and display.
     window = [[UIWindow alloc] initWithFrame: [[UIScreen mainScreen] bounds]];
 

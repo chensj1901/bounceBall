@@ -10,6 +10,11 @@
 #include "SJGameScene.h"
 #include "config.h"
 
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+#import <UIKit/UIKit.h>
+#else
+#endif
+
 USING_NS_CC;
 using namespace cocos2d::extension;
 
@@ -27,7 +32,7 @@ bool SJIndex::init(){
         return false;
     }
     
-    Size size = Director::getInstance()->getWinSize();
+    cocos2d::Size size = Director::getInstance()->getWinSize();
     
     auto layer=LayerColor::create(Color4B(239, 241, 224, 255));
     this->addChild(layer,0);
@@ -40,25 +45,41 @@ bool SJIndex::init(){
     titleLabel->setTextColor(ccc4(0, 0, 0, 255));
     this->addChild(titleLabel,1);
     
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+    //iOS代码
+    auto commenUsBtn=Sprite::create("commentUs.png");
+    commenUsBtn->setPosition(Vec2(size.width/2, size.height/12*5));
+    this->addChild(commenUsBtn,1);
+    
+    
+    auto comentListen = EventListenerTouchOneByOne::create();//创建一个触摸监听
+    comentListen->onTouchBegan =CC_CALLBACK_2(SJIndex::commentUs,this);
+    Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(comentListen, commenUsBtn);
+    
+#else
+    //Android代码
+#endif
+    
+    
     auto startBtn=Sprite::create("easy.png");
-    startBtn->setPosition(Vec2(size.width/3, size.height/4));
+    startBtn->setPosition(Vec2(size.width/5*1, size.height/3));
     startBtn->setTag(2);
     this->addChild(startBtn,1);
     
     auto startBtn2=Sprite::create("middle.png");
-    startBtn2->setPosition(Vec2(size.width/3*2, size.height/4));
+    startBtn2->setPosition(Vec2(size.width/5*4, size.height/3));
     startBtn2->setTag(3);
     this->addChild(startBtn2,1);
     
     auto startBtn3=Sprite::create("hard.png");
-    startBtn3->setPosition(Vec2(size.width/3, size.height/6));
+    startBtn3->setPosition(Vec2(size.width/10*3, size.height/6));
     startBtn3->setTag(4);
     this->addChild(startBtn3,1);
     
 
     bool  isVeryHardUnLock = UserDefault::getInstance()->getBoolForKey("isVeryHardUnLock");
     auto startBtn4=Sprite::create(isVeryHardUnLock?"veryHard.png":"veryHard_lock.png");
-    startBtn4->setPosition(Vec2(size.width/3*2, size.height/6));
+    startBtn4->setPosition(Vec2(size.width/10*7, size.height/6));
     startBtn4->setTag(5);
     this->addChild(startBtn4,1);
     
@@ -66,7 +87,7 @@ bool SJIndex::init(){
     String *s=String ::createWithFormat("金币：%d",coinCount);
     
     coinLabel=Label::createWithTTF(s->getCString(), "fonts/hyz.ttf", 28);
-    coinLabel->setPosition(WIDTH/2, HEIGHT/2);
+    coinLabel->setPosition(WIDTH/2, HEIGHT/8*5);
     coinLabel->setTextColor(ccc4(0, 0, 0, 255));
     coinLabel->setTag(18);
     
@@ -118,7 +139,7 @@ bool SJIndex::init(){
     Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(cancelListen, cancelBtn);
     
     
-//    UserDefault::getInstance()->setBoolForKey("isVeryHardUnLock", false);
+    UserDefault::getInstance()->setBoolForKey("isVeryHardUnLock", true);
     return true;
 }
 
@@ -128,9 +149,9 @@ bool SJIndex::start(Touch*touch
 {
     auto target = static_cast<Sprite*>(event->getCurrentTarget());
     
-    Point locationInNode = target->convertToNodeSpace(touch->getLocation());
-    Size s = target->getContentSize();
-    Rect rect = Rect(0, 0, s.width, s.height);
+    cocos2d::Point locationInNode = target->convertToNodeSpace(touch->getLocation());
+    cocos2d::Size s = target->getContentSize();
+    cocos2d::Rect rect = cocos2d::Rect(0, 0, s.width, s.height);
     
     if (rect.containsPoint(locationInNode))
     {
@@ -162,12 +183,35 @@ bool SJIndex::start(Touch*touch
     return false;
 }
 
+bool SJIndex::commentUs(cocos2d::Touch *touch, cocos2d::Event *event){
+    auto target = static_cast<Sprite*>(event->getCurrentTarget());
+    
+    cocos2d::Point locationInNode = target->convertToNodeSpace(touch->getLocation());
+    cocos2d::Size s = target->getContentSize();
+    cocos2d::Rect rect = cocos2d::Rect(0, 0, s.width, s.height);
+    
+    if (rect.containsPoint(locationInNode))
+    {
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+        //iOS代码
+    NSString *str = [NSString stringWithFormat: @"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=%@", @"346703830"];
+    [[UIApplication sharedApplication]openURL:[NSURL URLWithString:str]];
+    return true;
+#else
+        //Android代码
+#endif
+        
+    }
+    return false;
+}
+
+
 bool SJIndex::cancel(cocos2d::Touch *touch, cocos2d::Event *event){
     auto target = static_cast<Sprite*>(event->getCurrentTarget());
     
-    Point locationInNode = target->convertToNodeSpace(touch->getLocation());
-    Size s = target->getContentSize();
-    Rect rect = Rect(0, 0, s.width, s.height);
+    cocos2d::Point locationInNode = target->convertToNodeSpace(touch->getLocation());
+    cocos2d::Size s = target->getContentSize();
+    cocos2d::Rect rect = cocos2d::Rect(0, 0, s.width, s.height);
     
     if (rect.containsPoint(locationInNode))
     {
@@ -183,9 +227,9 @@ bool SJIndex::cancel(cocos2d::Touch *touch, cocos2d::Event *event){
 bool SJIndex::ok(cocos2d::Touch *touch, cocos2d::Event *event){
     auto target = static_cast<Sprite*>(event->getCurrentTarget());
     
-    Point locationInNode = target->convertToNodeSpace(touch->getLocation());
-    Size s = target->getContentSize();
-    Rect rect = Rect(0, 0, s.width, s.height);
+    cocos2d::Point locationInNode = target->convertToNodeSpace(touch->getLocation());
+    cocos2d::Size s = target->getContentSize();
+    cocos2d::Rect rect = cocos2d::Rect(0, 0, s.width, s.height);
     
     if (rect.containsPoint(locationInNode))
     {
@@ -217,11 +261,11 @@ bool SJIndex::ok(cocos2d::Touch *touch, cocos2d::Event *event){
 void alert(const std::string &text){
     
     auto title=Label::create(text,"fonts/hyz.ttf", 28);
-    Size titleSize=title->getBoundingBox().size;
+    cocos2d::Size titleSize=title->getBoundingBox().size;
     title->setPosition((titleSize.width+40)/2, (titleSize.height+40)/2);
     
     auto box=Sprite::create();
-    box->setTextureRect(Rect(0, 0, titleSize.width+40, titleSize.height+40));
+    box->setTextureRect(cocos2d::Rect(0, 0, titleSize.width+40, titleSize.height+40));
     box->setPosition(WIDTH/2, HEIGHT/8*3+100);
     box->setColor(ccc3(0, 0, 0));
     box->addChild(title);
