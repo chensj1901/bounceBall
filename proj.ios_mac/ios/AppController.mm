@@ -39,7 +39,7 @@ static AppDelegate s_sharedApplication;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [MobClick startWithAppkey:@"5591409667e58ea955000ff4"];
-
+    
     cocos2d::Application *app = cocos2d::Application::getInstance();
     app->initGLContextAttrs();
     cocos2d::GLViewImpl::convertAttrs();
@@ -84,9 +84,8 @@ static AppDelegate s_sharedApplication;
     // IMPORTANT: Setting the GLView should be done after creating the RootViewController
 
     cocos2d::GLView *glview = cocos2d::GLViewImpl::createWithEAGLView(eaglView);
-//    glview->setDesignResolutionSize(120, 120, ResolutionPolicy::EXACT_FIT);
+    //    glview->setDesignResolutionSize(120, 120, ResolutionPolicy::EXACT_FIT);
     cocos2d::Director::getInstance()->setOpenGLView(glview);
-
     app->run();
 
     return YES;

@@ -9,6 +9,7 @@
 #import "SJAdsController.h"
 #import "config.h"
 #import <AdMoGoView.h>
+#import <MobClick.h>
 
 static SJAdsController *_adsController;
 
@@ -37,7 +38,7 @@ static SJAdsController *_adsController;
 
 -(AdMoGoView *)adMoGoView{
     if (!_adMoGoView) {
-        _adMoGoView=[[AdMoGoView alloc]initWithAppKey:ADS_MOGO_APPKEY adType:AdViewTypeNormalBanner adMoGoViewDelegate:self];
+        _adMoGoView=[[AdMoGoView alloc]initWithAppKey:ADS_MOGO_APPKEY adType:AdViewTypeNormalBanner adMoGoViewDelegate:self adViewPointType:AdMoGoViewPointTypeDown_middle];
     }
     return _adMoGoView;
 }
@@ -68,6 +69,8 @@ static SJAdsController *_adsController;
 
 
 - (void)adMoGoDidReceiveAd:(AdMoGoView *)adMoGoView{
+    [MobClick event:@"01-01"];
+
     NSLog(@"%@",NSStringFromCGRect(adMoGoView.frame));
     CGRect frame=adMoGoView.frame;
     frame.origin.y=[UIScreen mainScreen].bounds.size.height-50;
@@ -83,6 +86,7 @@ static SJAdsController *_adsController;
 }
  
 - (void)adMoGoClickAd:(AdMoGoView *)adMoGoView{
+    [MobClick event:@"01-02"];
     NSLog(@"点击广告回调");
 }
 

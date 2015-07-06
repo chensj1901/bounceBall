@@ -102,7 +102,7 @@ void SJGame::update(float delta) {
         nextPlayStep[ballIndex]+=70+CCRANDOM_0_1()*80*(CCRANDOM_0_1()<0.5?1:2);
         auto obstacles=Sprite::createWithTexture(thingsBatch->getTexture());
         thingsBatch->addChild(obstacles);
-        obstacles->setScale(1+0.5*CCRANDOM_0_1(), 5+2.5*CCRANDOM_0_1());
+        obstacles->setScale(1+0.5*CCRANDOM_0_1(), 3.5+2.5*CCRANDOM_0_1());
         cocos2d::Size size = obstacles->getBoundingBox().size;
         obstacles->setPosition(Vec2(WIDTH,FLOOR_OFFSET_Y+ballIndex*padding+size.height/2));
         obstacles->setTag(SJObjectTagTypeObstacles);
@@ -131,12 +131,22 @@ void SJGame::update(float delta) {
                         ballSpriteI->runAction(seqI);
                     }
                 }else{
-                    obstacles->removeFromParent();
                     things->removeObject(obstacles);
+                    j--;
                     
-                    coin++;
-                    String *s=String::createWithFormat("金币：%d",this->coin);
-                    this->coinLabel->setString(s->getCString());
+//                    auto moveTo=MoveTo::create(0.5, this->coinLabel->getPosition());
+//                    auto easeExponentialIn= CCEaseExponentialIn::create(moveTo);
+//                    auto func=CallFunc::create([&]{
+                        obstacles->removeFromParent();
+                        coin++;
+                        String *s=String::createWithFormat("金币：%d",this->coin);
+                        this->coinLabel->setString(s->getCString());
+//                    });
+                    
+                    
+//                    Sequence *seqI=Sequence::create(easeExponentialIn,func,NULL);
+//                    obstacles->runAction(seqI);
+                    
                     
                 }
 
