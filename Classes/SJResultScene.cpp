@@ -60,10 +60,10 @@ void SJResult::onEnterTransitionDidFinish(){
     this->addChild(topLabel,5);
     
     float precent=(1-1/((float)this->mark/this->ballCount))*100;
-    precent=MAX(precent, 1);
+    precent=MAX(precent, 0);
     precent=MIN(precent, 99);
-    String *markStr=String::createWithFormat("您在当前难度成功躲过了%d面墙壁，超过了%.1f％的人，继续努力噢！😊",this->mark,precent);
-    resultLabel=Label::createWithTTF(markStr->getCString(), "fonts/hyz.ttf", 28);
+    String *markStr=String::createWithFormat("您成功躲过了%d面墙壁，超过了%d％的人，继续努力噢！😊",this->mark,(int)precent);
+    resultLabel=Label::createWithTTF(markStr->getCString(), "fonts/hyz.ttf", 18);
     resultLabel->setPosition(WIDTH/2, HEIGHT/5*2.8);
     resultLabel->setTextColor(ccc4(0, 0, 0, 255));
     this->addChild(resultLabel,5);

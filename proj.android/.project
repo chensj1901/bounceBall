@@ -58,6 +58,11 @@
 			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/Classes</locationURI>
 		</link>
 		<link>
+			<name>bounceBall</name>
+			<type>2</type>
+			<location>/Users/chenshaojie/Desktop/project/bounceBall/cocos2d/cocos/platform/android/java/src</location>
+		</link>
+		<link>
 			<name>cocos2d</name>
 			<type>2</type>
 			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/cocos2d</locationURI>

@@ -27,7 +27,7 @@ USING_NS_CC;
 
 #define FLOOR_OFFSET_Y 120
 
-using namespace cocos2d::extension;
+//using namespace cocos2d::extension;
 
 Scene *SJGame::createScene(){
     auto scene = Scene::create();

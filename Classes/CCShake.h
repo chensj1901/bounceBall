@@ -18,7 +18,7 @@
  2.自己外部记录这个CCNode的位置,执行完成后手动setPosition();
  */
 
-#include "CCActionInterval.h"
+#include "cocos2d.h"
 
 /**
  * 按指定频度范围内抖动[-strength_x,strength_x][-strength_y, strength_y]

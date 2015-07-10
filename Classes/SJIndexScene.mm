@@ -17,7 +17,7 @@
 #endif
 
 USING_NS_CC;
-using namespace cocos2d::extension;
+//using namespace cocos2d::extension;
 
 Scene *SJIndex::createScene(){
     auto scene = Scene::create();
@@ -80,7 +80,7 @@ bool SJIndex::init(){
 
     bool  isVeryHardUnLock = UserDefault::getInstance()->getBoolForKey("isVeryHardUnLock");
     auto startBtn4=Sprite::create(isVeryHardUnLock?"veryHard.png":"veryHard_lock.png");
-    startBtn4->setPosition(Vec2(size.width/10*7, size.height/6));
+    startBtn4->setPosition(Vec2(size.width/10*7., size.height/6));
     startBtn4->setTag(5);
     this->addChild(startBtn4,1);
     

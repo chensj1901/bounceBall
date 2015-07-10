@@ -10,7 +10,7 @@
 #define __bounceBall__SJGameScene__
 
 #include "cocos2d.h"
-#include "GUI/CCControlExtension/CCControlExtensions.h"
+//#include "GUI/CCControlExtension/CCControlExtensions.h"
 
 
 class SJGame : public cocos2d::Layer

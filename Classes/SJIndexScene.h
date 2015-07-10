@@ -10,7 +10,7 @@
 #define __bounceBall__SJIndexScene__
 
 #include "cocos2d.h"
-#include "GUI/CCControlExtension/CCControlExtensions.h"
+//#include "GUI/CCControlExtension/CCControlExtensions.h"
 
 
 class SJIndex : public cocos2d::Layer
