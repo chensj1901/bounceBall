@@ -1,5 +1,5 @@
 LOCAL_PATH := $(call my-dir)
-APP_CPPFLAGS += -Wno-error=format-security
+APP_CPPFLAGS += -Wno-extern-c-compat
 include $(CLEAR_VARS)
 
 $(call import-add-path,$(LOCAL_PATH)/../../cocos2d)
@@ -12,6 +12,11 @@ LOCAL_MODULE_FILENAME := libcocos2dcpp
 
 LOCAL_SRC_FILES := hellocpp/main.cpp \
                    ../../Classes/AppDelegate.cpp \
+                   ../../Classes/CCShake.cpp \
+                   ../../Classes/SJIndexScene.cpp \
+                   ../../Classes/SJMogo.cpp \
+                   ../../Classes/SJGameScene.cpp \
+                   ../../Classes/SJResultScene.cpp \
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../Classes
 

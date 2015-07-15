@@ -45,7 +45,6 @@ static SJAdsController *_adsController;
 
 
 -(void)showAdsBanner{
-    return;
     UIWindow *mainWindow=[[[UIApplication sharedApplication]windows]objectAtIndex:0];
     [mainWindow addSubview:self.adMoGoView];
 }

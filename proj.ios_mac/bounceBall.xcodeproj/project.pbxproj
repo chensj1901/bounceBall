@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		046EA48B1B36884600660B04 /* SJGameScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = 046EA4891B36884600660B04 /* SJGameScene.mm */; };
-		046EA48C1B368BA900660B04 /* SJIndexScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0498378E1B356BF500059EF3 /* SJIndexScene.mm */; };
-		046EA48D1B368BA900660B04 /* SJGameScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = 046EA4891B36884600660B04 /* SJGameScene.mm */; };
 		0473BA231B495BA5009D17B0 /* Default-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 0473BA221B495BA5009D17B0 /* Default-Portrait.png */; };
 		0473BA621B495C8B009D17B0 /* AdMoGoAdapterBaiduFullAds.m in Sources */ = {isa = PBXBuildFile; fileRef = 0473BA271B495C8B009D17B0 /* AdMoGoAdapterBaiduFullAds.m */; };
 		0473BA631B495C8B009D17B0 /* AdMoGoAdapterBaiduMobAd.m in Sources */ = {isa = PBXBuildFile; fileRef = 0473BA291B495C8B009D17B0 /* AdMoGoAdapterBaiduMobAd.m */; };
@@ -34,7 +31,6 @@
 		0473BA761B495C8B009D17B0 /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 0473BA5E1B495C8B009D17B0 /* zip.c */; };
 		0473BA771B495C8B009D17B0 /* ZipArchive.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0473BA611B495C8B009D17B0 /* ZipArchive.mm */; };
 		0473BA791B496078009D17B0 /* commentUs.png in Resources */ = {isa = PBXBuildFile; fileRef = 0473BA781B496078009D17B0 /* commentUs.png */; };
-		049837901B356BF500059EF3 /* SJIndexScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0498378E1B356BF500059EF3 /* SJIndexScene.mm */; };
 		049B04FA1B458E1C00D92A45 /* easy.png in Resources */ = {isa = PBXBuildFile; fileRef = 049B04F61B458E1C00D92A45 /* easy.png */; };
 		049B04FB1B458E1C00D92A45 /* easy.png in Resources */ = {isa = PBXBuildFile; fileRef = 049B04F61B458E1C00D92A45 /* easy.png */; };
 		049B04FC1B458E1C00D92A45 /* hard.png in Resources */ = {isa = PBXBuildFile; fileRef = 049B04F71B458E1C00D92A45 /* hard.png */; };
@@ -97,6 +93,8 @@
 		33047FD91B417A2300B30238 /* againBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 33047FD61B417A2300B30238 /* againBtn.png */; };
 		33047FDA1B417A2300B30238 /* homeBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 33047FD71B417A2300B30238 /* homeBtn.png */; };
 		33047FDB1B417A2300B30238 /* homeBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 33047FD71B417A2300B30238 /* homeBtn.png */; };
+		330A143C1B510FDD00B1C8DC /* SJGameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 330A143A1B510FDD00B1C8DC /* SJGameScene.cpp */; };
+		330A143D1B510FDD00B1C8DC /* SJIndexScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 330A143B1B510FDD00B1C8DC /* SJIndexScene.cpp */; };
 		333D48771B4CDA3700E9CF3C /* veryHard_lock.png in Resources */ = {isa = PBXBuildFile; fileRef = 333D48751B4CDA3700E9CF3C /* veryHard_lock.png */; };
 		333D48781B4CDA3700E9CF3C /* veryHard_lock.png in Resources */ = {isa = PBXBuildFile; fileRef = 333D48751B4CDA3700E9CF3C /* veryHard_lock.png */; };
 		333D48791B4CDA3700E9CF3C /* veryHard.png in Resources */ = {isa = PBXBuildFile; fileRef = 333D48761B4CDA3700E9CF3C /* veryHard.png */; };
@@ -115,6 +113,10 @@
 		335AB3F11B3D819700234DCC /* floor.png in Resources */ = {isa = PBXBuildFile; fileRef = 335AB3EF1B3D819700234DCC /* floor.png */; };
 		33683CD61B4A9B6E00EAC44E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33683CD51B4A9B6E00EAC44E /* Images.xcassets */; };
 		336CA5681B4FECB200189508 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 336CA56A1B4FECB200189508 /* InfoPlist.strings */; };
+		336EA0C81B567A4E008D27C5 /* SJMogoForIos.mm in Sources */ = {isa = PBXBuildFile; fileRef = 336EA0C61B567A4E008D27C5 /* SJMogoForIos.mm */; };
+		336EA0CA1B568619008D27C5 /* SJIndexScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 330A143B1B510FDD00B1C8DC /* SJIndexScene.cpp */; };
+		336EA0CB1B568619008D27C5 /* SJGameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 330A143A1B510FDD00B1C8DC /* SJGameScene.cpp */; };
+		33AA34491B55238C001D18D1 /* SJMogo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 33AA34471B55238C001D18D1 /* SJMogo.cpp */; };
 		33AB68011B43AC45000428E0 /* coin.png in Resources */ = {isa = PBXBuildFile; fileRef = 33AB68001B43AC45000428E0 /* coin.png */; };
 		33AB68021B43AC45000428E0 /* coin.png in Resources */ = {isa = PBXBuildFile; fileRef = 33AB68001B43AC45000428E0 /* coin.png */; };
 		33BBA5341B3E9AAF00B38793 /* ball.png in Resources */ = {isa = PBXBuildFile; fileRef = 33BBA5331B3E9AAF00B38793 /* ball.png */; };
@@ -210,7 +212,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		046EA4891B36884600660B04 /* SJGameScene.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; lineEnding = 0; path = SJGameScene.mm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
 		046EA48A1B36884600660B04 /* SJGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJGameScene.h; sourceTree = "<group>"; };
 		046EA48E1B3690CA00660B04 /* config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
 		0473BA221B495BA5009D17B0 /* Default-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait.png"; sourceTree = "<group>"; };
@@ -266,7 +267,6 @@
 		0473BA601B495C8B009D17B0 /* ZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipArchive.h; sourceTree = "<group>"; };
 		0473BA611B495C8B009D17B0 /* ZipArchive.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ZipArchive.mm; sourceTree = "<group>"; };
 		0473BA781B496078009D17B0 /* commentUs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = commentUs.png; sourceTree = "<group>"; };
-		0498378E1B356BF500059EF3 /* SJIndexScene.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SJIndexScene.mm; sourceTree = "<group>"; };
 		0498378F1B356BF500059EF3 /* SJIndexScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJIndexScene.h; sourceTree = "<group>"; };
 		049B04F61B458E1C00D92A45 /* easy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = easy.png; sourceTree = "<group>"; };
 		049B04F71B458E1C00D92A45 /* hard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hard.png; sourceTree = "<group>"; };
@@ -332,6 +332,8 @@
 		33047FA21B41319300B30238 /* adwo_videoTimeRectangleBig.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = adwo_videoTimeRectangleBig.png; sourceTree = "<group>"; };
 		33047FD61B417A2300B30238 /* againBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = againBtn.png; sourceTree = "<group>"; };
 		33047FD71B417A2300B30238 /* homeBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = homeBtn.png; sourceTree = "<group>"; };
+		330A143A1B510FDD00B1C8DC /* SJGameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SJGameScene.cpp; sourceTree = "<group>"; };
+		330A143B1B510FDD00B1C8DC /* SJIndexScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SJIndexScene.cpp; sourceTree = "<group>"; };
 		333D48751B4CDA3700E9CF3C /* veryHard_lock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = veryHard_lock.png; sourceTree = "<group>"; };
 		333D48761B4CDA3700E9CF3C /* veryHard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = veryHard.png; sourceTree = "<group>"; };
 		333D487B1B4CDA5200E9CF3C /* alertBox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alertBox.png; sourceTree = "<group>"; };
@@ -343,6 +345,10 @@
 		33683CD51B4A9B6E00EAC44E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "bounceBall iOS/Images.xcassets"; sourceTree = SOURCE_ROOT; };
 		336CA5691B4FECB200189508 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		336CA56B1B4FECBC00189508 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		336EA0C61B567A4E008D27C5 /* SJMogoForIos.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SJMogoForIos.mm; sourceTree = "<group>"; };
+		336EA0C71B567A4E008D27C5 /* SJMogoForIos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJMogoForIos.h; sourceTree = "<group>"; };
+		33AA34471B55238C001D18D1 /* SJMogo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SJMogo.cpp; sourceTree = "<group>"; };
+		33AA34481B55238C001D18D1 /* SJMogo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJMogo.h; sourceTree = "<group>"; };
 		33AB68001B43AC45000428E0 /* coin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coin.png; sourceTree = "<group>"; };
 		33BBA5331B3E9AAF00B38793 /* ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ball.png; sourceTree = "<group>"; };
 		33BBA5391B3E9C1300B38793 /* blackBlock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackBlock.png; sourceTree = "<group>"; };
@@ -784,10 +790,14 @@
 			children = (
 				46880B8419C43A87006E1F66 /* AppDelegate.cpp */,
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
-				0498378E1B356BF500059EF3 /* SJIndexScene.mm */,
 				0498378F1B356BF500059EF3 /* SJIndexScene.h */,
-				046EA4891B36884600660B04 /* SJGameScene.mm */,
+				330A143B1B510FDD00B1C8DC /* SJIndexScene.cpp */,
+				33AA34471B55238C001D18D1 /* SJMogo.cpp */,
+				33AA34481B55238C001D18D1 /* SJMogo.h */,
+				336EA0C61B567A4E008D27C5 /* SJMogoForIos.mm */,
+				336EA0C71B567A4E008D27C5 /* SJMogoForIos.h */,
 				046EA48A1B36884600660B04 /* SJGameScene.h */,
+				330A143A1B510FDD00B1C8DC /* SJGameScene.cpp */,
 				33BBA53C1B3EAF5300B38793 /* CCShake.cpp */,
 				33BBA5401B3EC17900B38793 /* SJResultScene.cpp */,
 				33BBA5411B3EC17900B38793 /* SJResultScene.h */,
@@ -1110,21 +1120,22 @@
 			files = (
 				0473BA761B495C8B009D17B0 /* zip.c in Sources */,
 				0473BA6F1B495C8B009D17B0 /* NSDictionary_JSONExtensions.m in Sources */,
-				046EA48B1B36884600660B04 /* SJGameScene.mm in Sources */,
 				33BBA5421B3EC17900B38793 /* SJResultScene.cpp in Sources */,
 				0473BA681B495C8B009D17B0 /* OpenUDID.m in Sources */,
 				33047FA61B41319300B30238 /* AdsMogoAdapterAdwoVideoAd.m in Sources */,
+				330A143C1B510FDD00B1C8DC /* SJGameScene.cpp in Sources */,
 				0473BA691B495C8B009D17B0 /* CDataScanner.m in Sources */,
+				336EA0C81B567A4E008D27C5 /* SJMogoForIos.mm in Sources */,
 				0473BA701B495C8B009D17B0 /* CJSONDeserializer.m in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				0473BA631B495C8B009D17B0 /* AdMoGoAdapterBaiduMobAd.m in Sources */,
 				33047FA31B41319300B30238 /* AdMoGoAdapterAdwo.m in Sources */,
+				330A143D1B510FDD00B1C8DC /* SJIndexScene.cpp in Sources */,
 				0473BA6C1B495C8B009D17B0 /* CJSONSerialization.m in Sources */,
 				0473BA621B495C8B009D17B0 /* AdMoGoAdapterBaiduFullAds.m in Sources */,
 				0473BA721B495C8B009D17B0 /* CJSONSerializer.m in Sources */,
 				0473BA751B495C8B009D17B0 /* unzip.c in Sources */,
 				0473BA6D1B495C8B009D17B0 /* CJSONSerializedData.m in Sources */,
-				049837901B356BF500059EF3 /* SJIndexScene.mm in Sources */,
 				33047FA51B41319300B30238 /* AdMoGoAdapterAdwoSplash.m in Sources */,
 				0473BA6E1B495C8B009D17B0 /* CDataScanner_Extensions.m in Sources */,
 				0473BA6B1B495C8B009D17B0 /* CJSONDeserializer_BlocksExtensions.m in Sources */,
@@ -1138,6 +1149,7 @@
 				0473BA771B495C8B009D17B0 /* ZipArchive.mm in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
+				33AA34491B55238C001D18D1 /* SJMogo.cpp in Sources */,
 				33BBA53E1B3EAF5300B38793 /* CCShake.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				0473BA741B495C8B009D17B0 /* mztools.c in Sources */,
@@ -1148,8 +1160,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				046EA48C1B368BA900660B04 /* SJIndexScene.mm in Sources */,
-				046EA48D1B368BA900660B04 /* SJGameScene.mm in Sources */,
+				336EA0CA1B568619008D27C5 /* SJIndexScene.cpp in Sources */,
+				336EA0CB1B568619008D27C5 /* SJGameScene.cpp in Sources */,
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				33BBA5431B3EC17900B38793 /* SJResultScene.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
