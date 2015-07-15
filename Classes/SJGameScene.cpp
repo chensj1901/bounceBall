@@ -18,14 +18,21 @@ typedef enum {
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
 //iOS代码
-#include "SJAdsController.h"
-#else
+#include "SJMogoForIos.h"
+#elif(CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
 //Android代码
+#include "SJMogo.h"
 #endif
 
 USING_NS_CC;
 
+//#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
 #define FLOOR_OFFSET_Y 120
+//#elif(CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+//#define FLOOR_OFFSET_Y 50*Director::getInstance()->getContentScaleFactor()+20
+//#else
+//#define FLOOR_OFFSET_Y 0
+//#endif
 
 //using namespace cocos2d::extension;
 
@@ -43,7 +50,6 @@ void SJGame::update(float delta) {
     for (int j=0; j<things->count(); j++) {
         Sprite* obstacles=(Sprite*)things->getObjectAtIndex(j);
         obstacles->setPosition(obstacles->getPosition().x-10, obstacles->getPosition().y);
-
         if (obstacles->getPositionX()<100&&obstacles->getPositionX()>=90&&obstacles->getTag()==SJObjectTagTypeObstacles) {
             this->mark++;
             String *s=String::createWithFormat("当前分数：%d",this->mark);
@@ -191,9 +197,10 @@ void SJGame::gameOver(){
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     //iOS代码
-    [SJAdsController removeAdsBanner];
-#else
+    MOGOAdForIos::hideBanner();
+#elif(CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
     //Android代码
+    MOGOAd::hideBanner();
 #endif
 }
 
@@ -286,9 +293,10 @@ void SJGame::onEnterTransitionDidFinish(){
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     //iOS代码
-    [SJAdsController showAdsBanner];
-#else
+    MOGOAdForIos::showBanner();
+#elif(CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
     //Android代码
+    MOGOAd::showBanner();
 #endif
     
 }

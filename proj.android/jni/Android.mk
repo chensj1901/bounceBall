@@ -14,6 +14,7 @@ LOCAL_SRC_FILES := hellocpp/main.cpp \
                    ../../Classes/AppDelegate.cpp \
                    ../../Classes/CCShake.cpp \
                    ../../Classes/SJIndexScene.cpp \
+                   ../../Classes/SJMogo.cpp \
                    ../../Classes/SJGameScene.cpp \
                    ../../Classes/SJResultScene.cpp \
 

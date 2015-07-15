@@ -113,6 +113,10 @@
 		335AB3F11B3D819700234DCC /* floor.png in Resources */ = {isa = PBXBuildFile; fileRef = 335AB3EF1B3D819700234DCC /* floor.png */; };
 		33683CD61B4A9B6E00EAC44E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33683CD51B4A9B6E00EAC44E /* Images.xcassets */; };
 		336CA5681B4FECB200189508 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 336CA56A1B4FECB200189508 /* InfoPlist.strings */; };
+		336EA0C81B567A4E008D27C5 /* SJMogoForIos.mm in Sources */ = {isa = PBXBuildFile; fileRef = 336EA0C61B567A4E008D27C5 /* SJMogoForIos.mm */; };
+		336EA0CA1B568619008D27C5 /* SJIndexScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 330A143B1B510FDD00B1C8DC /* SJIndexScene.cpp */; };
+		336EA0CB1B568619008D27C5 /* SJGameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 330A143A1B510FDD00B1C8DC /* SJGameScene.cpp */; };
+		33AA34491B55238C001D18D1 /* SJMogo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 33AA34471B55238C001D18D1 /* SJMogo.cpp */; };
 		33AB68011B43AC45000428E0 /* coin.png in Resources */ = {isa = PBXBuildFile; fileRef = 33AB68001B43AC45000428E0 /* coin.png */; };
 		33AB68021B43AC45000428E0 /* coin.png in Resources */ = {isa = PBXBuildFile; fileRef = 33AB68001B43AC45000428E0 /* coin.png */; };
 		33BBA5341B3E9AAF00B38793 /* ball.png in Resources */ = {isa = PBXBuildFile; fileRef = 33BBA5331B3E9AAF00B38793 /* ball.png */; };
@@ -341,6 +345,10 @@
 		33683CD51B4A9B6E00EAC44E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "bounceBall iOS/Images.xcassets"; sourceTree = SOURCE_ROOT; };
 		336CA5691B4FECB200189508 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		336CA56B1B4FECBC00189508 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		336EA0C61B567A4E008D27C5 /* SJMogoForIos.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SJMogoForIos.mm; sourceTree = "<group>"; };
+		336EA0C71B567A4E008D27C5 /* SJMogoForIos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJMogoForIos.h; sourceTree = "<group>"; };
+		33AA34471B55238C001D18D1 /* SJMogo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SJMogo.cpp; sourceTree = "<group>"; };
+		33AA34481B55238C001D18D1 /* SJMogo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJMogo.h; sourceTree = "<group>"; };
 		33AB68001B43AC45000428E0 /* coin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coin.png; sourceTree = "<group>"; };
 		33BBA5331B3E9AAF00B38793 /* ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ball.png; sourceTree = "<group>"; };
 		33BBA5391B3E9C1300B38793 /* blackBlock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackBlock.png; sourceTree = "<group>"; };
@@ -784,6 +792,10 @@
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
 				0498378F1B356BF500059EF3 /* SJIndexScene.h */,
 				330A143B1B510FDD00B1C8DC /* SJIndexScene.cpp */,
+				33AA34471B55238C001D18D1 /* SJMogo.cpp */,
+				33AA34481B55238C001D18D1 /* SJMogo.h */,
+				336EA0C61B567A4E008D27C5 /* SJMogoForIos.mm */,
+				336EA0C71B567A4E008D27C5 /* SJMogoForIos.h */,
 				046EA48A1B36884600660B04 /* SJGameScene.h */,
 				330A143A1B510FDD00B1C8DC /* SJGameScene.cpp */,
 				33BBA53C1B3EAF5300B38793 /* CCShake.cpp */,
@@ -1113,6 +1125,7 @@
 				33047FA61B41319300B30238 /* AdsMogoAdapterAdwoVideoAd.m in Sources */,
 				330A143C1B510FDD00B1C8DC /* SJGameScene.cpp in Sources */,
 				0473BA691B495C8B009D17B0 /* CDataScanner.m in Sources */,
+				336EA0C81B567A4E008D27C5 /* SJMogoForIos.mm in Sources */,
 				0473BA701B495C8B009D17B0 /* CJSONDeserializer.m in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				0473BA631B495C8B009D17B0 /* AdMoGoAdapterBaiduMobAd.m in Sources */,
@@ -1136,6 +1149,7 @@
 				0473BA771B495C8B009D17B0 /* ZipArchive.mm in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
+				33AA34491B55238C001D18D1 /* SJMogo.cpp in Sources */,
 				33BBA53E1B3EAF5300B38793 /* CCShake.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				0473BA741B495C8B009D17B0 /* mztools.c in Sources */,
@@ -1146,6 +1160,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				336EA0CA1B568619008D27C5 /* SJIndexScene.cpp in Sources */,
+				336EA0CB1B568619008D27C5 /* SJGameScene.cpp in Sources */,
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				33BBA5431B3EC17900B38793 /* SJResultScene.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,

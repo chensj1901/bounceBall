@@ -37,7 +37,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
         glview = GLViewImpl::create("My Game");
         director->setOpenGLView(glview);
     }
-
+    glview->setDesignResolutionSize(640, 1136, ResolutionPolicy::FIXED_HEIGHT);
     // turn on display FPS
     director->setDisplayStats(false);
 
@@ -52,6 +52,8 @@ bool AppDelegate::applicationDidFinishLaunching() {
     // run
     director->runWithScene(scene);
 
+//    CCDirector::sharedDirector()->setContentScaleFactor(2);
+    
     return true;
 }
 

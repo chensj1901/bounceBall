@@ -11,8 +11,7 @@
 #include "config.h"
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-#import <UIKit/UIKit.h>
-#import <MobClick.h>
+#include "SJMogoForIos.h"
 #else
 #endif
 
@@ -195,15 +194,7 @@ bool SJIndex::commentUs(cocos2d::Touch *touch, cocos2d::Event *event){
     {
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
         //iOS代码
-    [MobClick event:@"02-01"];
-    NSString *str;
-    if (([[[UIDevice currentDevice]systemVersion]doubleValue])>=7.0) {
-        str=[NSString stringWithFormat: @"http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=%@&pageNumber=0&sortOrdering=2&type=Purple+Software&mt=8", @"1013794378"];
-    }else{
-        str = [NSString stringWithFormat: @"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=%@", @"1013794378"];
-    }
-
-    [[UIApplication sharedApplication]openURL:[NSURL URLWithString:str]];
+    MOGOAdForIos::rankApp();
     return true;
 #else
         //Android代码
