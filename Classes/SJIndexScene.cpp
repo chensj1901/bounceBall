@@ -139,7 +139,7 @@ bool SJIndex::init(){
     Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(cancelListen, cancelBtn);
 
 
-    UserDefault::getInstance()->setBoolForKey("isVeryHardUnLock", true);
+//    UserDefault::getInstance()->setBoolForKey("isVeryHardUnLock", true);
     return true;
 }
 

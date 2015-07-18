@@ -43,6 +43,7 @@ import com.adsmogo.util.AdsMogoSplashMode;
 import com.adsmogo.util.AdsMogoUtil;
 import com.adsmogo.util.L;
 import com.adsmogo.*;
+import com.umeng.mobclickcpp.MobClickCppHelper;
 
 public class AppActivity extends Cocos2dxActivity implements AdsMogoListener {
 	private static Handler handler;
@@ -51,6 +52,10 @@ public class AppActivity extends Cocos2dxActivity implements AdsMogoListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
+		MobClickCppHelper.init(this);
+		
+		
 		final RelativeLayout bannerLayout = new RelativeLayout(this);
 		RelativeLayout.LayoutParams parentLayputParams = new RelativeLayout.LayoutParams(
 				RelativeLayout.LayoutParams.FILL_PARENT,
@@ -150,5 +155,9 @@ public class AppActivity extends Cocos2dxActivity implements AdsMogoListener {
 		// TODO Auto-generated method stub
 
 	}
-
+	
+	static {
+        MobClickCppHelper.loadLibrary();
+	}
+	
 }

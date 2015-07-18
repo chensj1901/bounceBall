@@ -25,6 +25,7 @@ LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../Classes
 
 
 LOCAL_STATIC_LIBRARIES := cocos2dx_static
+LOCAL_SHARED_LIBRARIES := mobclickcpp_shared
 
 # _COCOS_LIB_ANDROID_BEGIN
 # _COCOS_LIB_ANDROID_END
@@ -32,6 +33,7 @@ LOCAL_STATIC_LIBRARIES := cocos2dx_static
 include $(BUILD_SHARED_LIBRARY)
 
 $(call import-module,.)
+$(call import-module,libmobclickcpp)
 
 # _COCOS_LIB_IMPORT_ANDROID_BEGIN
 # _COCOS_LIB_IMPORT_ANDROID_END

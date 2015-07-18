@@ -27,7 +27,7 @@ typedef enum {
 USING_NS_CC;
 
 //#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-#define FLOOR_OFFSET_Y 120
+#define FLOOR_OFFSET_Y 160
 //#elif(CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
 //#define FLOOR_OFFSET_Y 50*Director::getInstance()->getContentScaleFactor()+20
 //#else
