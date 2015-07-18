@@ -1,6 +1,9 @@
 #include "AppDelegate.h"
 #include "SJIndexScene.h"
+
+#if CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID
 #include "MobClickCpp.h"
+#endif
 
 USING_NS_CC;
 
@@ -32,8 +35,11 @@ static int register_all_packages()
 
 bool AppDelegate::applicationDidFinishLaunching() {
     // initialize director
+    
+#if CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID
 	MOBCLICKCPP_START_WITH_APPKEY_AND_CHANNEL("55a7591767e58e2d010009cf", "360");
-
+#endif
+    
     auto director = Director::getInstance();
     auto glview = director->getOpenGLView();
     if(!glview) {
@@ -65,7 +71,11 @@ bool AppDelegate::applicationDidFinishLaunching() {
 // This function will be called when the app is inactive. When comes a phone call,it's be invoked too
 void AppDelegate::applicationDidEnterBackground() {
     Director::getInstance()->stopAnimation();
+    
+#if CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID
     umeng::MobClickCpp::applicationDidEnterBackground();
+#endif
+    
     // if you use SimpleAudioEngine, it must be pause
     // SimpleAudioEngine::getInstance()->pauseBackgroundMusic();
 }
@@ -73,7 +83,10 @@ void AppDelegate::applicationDidEnterBackground() {
 // this function will be called when the app is active again
 void AppDelegate::applicationWillEnterForeground() {
     Director::getInstance()->startAnimation();
+    
+#if CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID
     umeng::MobClickCpp::applicationWillEnterForeground();
+#endif
     // if you use SimpleAudioEngine, it must resume here
     // SimpleAudioEngine::getInstance()->resumeBackgroundMusic();
 }

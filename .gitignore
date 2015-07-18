@@ -17,6 +17,7 @@ xcuserdata
 DerivedData
 *.hmap
 *.ipa
+*.iml
 *.xcuserstate
 .DS_store
 Pods/
@@ -26,6 +27,8 @@ Pods/
 # Built application files
 *.apk
 *.ap_
+
+.idea/
 
 # Files for the Dalvik VM
 *.dex

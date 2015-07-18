@@ -9,6 +9,7 @@
 #include "SJIndexScene.h"
 #include "SJGameScene.h"
 #include "config.h"
+#include "SJLanguage.h"
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
 #include "SJMogoForIos.h"
@@ -39,8 +40,8 @@ bool SJIndex::init(){
 
 //    auto startBtn=ControlButton::create();
 //    startBtn->addTargetWithActionForControlEvents(this, cccontrol_selector(SJIndex::start), Control::EventType::TOUCH_UP_INSIDE);
-
-    auto titleLabel=Label::createWithTTF("谁能不碰壁", "fonts/hyz.ttf", 48);
+    ;
+    auto titleLabel=Label::createWithTTF(LocalizedCStringByKey("appName"), "fonts/hyz.ttf", 48);
     titleLabel->setPosition(size.width/2,size.height/4*3);
     titleLabel->setTextColor(ccc4(0, 0, 0, 255));
     this->addChild(titleLabel,1);

@@ -126,6 +126,10 @@
 		33BBA53F1B3EAF5300B38793 /* CCShake.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 33BBA53C1B3EAF5300B38793 /* CCShake.cpp */; };
 		33BBA5421B3EC17900B38793 /* SJResultScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 33BBA5401B3EC17900B38793 /* SJResultScene.cpp */; };
 		33BBA5431B3EC17900B38793 /* SJResultScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 33BBA5401B3EC17900B38793 /* SJResultScene.cpp */; };
+		33CB191C1B5A490E002024A2 /* SJLanguage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 33CB191A1B5A490E002024A2 /* SJLanguage.cpp */; };
+		33CB191D1B5A490E002024A2 /* SJLanguage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 33CB191A1B5A490E002024A2 /* SJLanguage.cpp */; };
+		33CB191F1B5A4AA5002024A2 /* language in Resources */ = {isa = PBXBuildFile; fileRef = 33CB191E1B5A4AA5002024A2 /* language */; };
+		33CB19201B5A4AA5002024A2 /* language in Resources */ = {isa = PBXBuildFile; fileRef = 33CB191E1B5A4AA5002024A2 /* language */; };
 		3EACC98F19EE6D4300EB3C5E /* res in Resources */ = {isa = PBXBuildFile; fileRef = 3EACC98E19EE6D4300EB3C5E /* res */; };
 		3EACC99019EE6D4300EB3C5E /* res in Resources */ = {isa = PBXBuildFile; fileRef = 3EACC98E19EE6D4300EB3C5E /* res */; };
 		46880B7B19C43A67006E1F66 /* CloseNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 46880B7619C43A67006E1F66 /* CloseNormal.png */; };
@@ -356,6 +360,9 @@
 		33BBA53D1B3EAF5300B38793 /* CCShake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCShake.h; sourceTree = "<group>"; };
 		33BBA5401B3EC17900B38793 /* SJResultScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SJResultScene.cpp; sourceTree = "<group>"; };
 		33BBA5411B3EC17900B38793 /* SJResultScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJResultScene.h; sourceTree = "<group>"; };
+		33CB191A1B5A490E002024A2 /* SJLanguage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SJLanguage.cpp; sourceTree = "<group>"; };
+		33CB191B1B5A490E002024A2 /* SJLanguage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJLanguage.h; sourceTree = "<group>"; };
+		33CB191E1B5A4AA5002024A2 /* language */ = {isa = PBXFileReference; lastKnownFileType = folder; path = language; sourceTree = "<group>"; };
 		3EACC98E19EE6D4300EB3C5E /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; path = res; sourceTree = "<group>"; };
 		41E9F867D5FF1697D71E48A2 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		46880B7619C43A67006E1F66 /* CloseNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseNormal.png; sourceTree = "<group>"; };
@@ -763,6 +770,7 @@
 				46880B7619C43A67006E1F66 /* CloseNormal.png */,
 				46880B7719C43A67006E1F66 /* CloseSelected.png */,
 				46880B7A19C43A67006E1F66 /* HelloWorld.png */,
+				33CB191E1B5A4AA5002024A2 /* language */,
 				333D487E1B4CDA6D00E9CF3C /* cancelBtn.png */,
 				333D487F1B4CDA6D00E9CF3C /* okBtn.png */,
 				333D487B1B4CDA5200E9CF3C /* alertBox.png */,
@@ -788,8 +796,10 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				46880B8419C43A87006E1F66 /* AppDelegate.cpp */,
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
+				46880B8419C43A87006E1F66 /* AppDelegate.cpp */,
+				33CB191A1B5A490E002024A2 /* SJLanguage.cpp */,
+				33CB191B1B5A490E002024A2 /* SJLanguage.h */,
 				0498378F1B356BF500059EF3 /* SJIndexScene.h */,
 				330A143B1B510FDD00B1C8DC /* SJIndexScene.cpp */,
 				33AA34471B55238C001D18D1 /* SJMogo.cpp */,
@@ -1027,6 +1037,7 @@
 				33047FAE1B41319300B30238 /* adwo_audioShare.png in Resources */,
 				5087E78217EB970100C73F5D /* Icon-144.png in Resources */,
 				3EACC98F19EE6D4300EB3C5E /* res in Resources */,
+				33CB191F1B5A4AA5002024A2 /* language in Resources */,
 				33047FAD1B41319300B30238 /* adwo_audioRecord.png in Resources */,
 				0473BA231B495BA5009D17B0 /* Default-Portrait.png in Resources */,
 				33047FC51B41319300B30238 /* adwo_videoMute.png in Resources */,
@@ -1068,6 +1079,7 @@
 				3EACC99019EE6D4300EB3C5E /* res in Resources */,
 				33047FDB1B417A2300B30238 /* homeBtn.png in Resources */,
 				33047FD91B417A2300B30238 /* againBtn.png in Resources */,
+				33CB19201B5A4AA5002024A2 /* language in Resources */,
 				049B04FD1B458E1C00D92A45 /* hard.png in Resources */,
 				521A8EAA19F11F5000D177D7 /* fonts in Resources */,
 				049B04FB1B458E1C00D92A45 /* easy.png in Resources */,
@@ -1118,6 +1130,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33CB191C1B5A490E002024A2 /* SJLanguage.cpp in Sources */,
 				0473BA761B495C8B009D17B0 /* zip.c in Sources */,
 				0473BA6F1B495C8B009D17B0 /* NSDictionary_JSONExtensions.m in Sources */,
 				33BBA5421B3EC17900B38793 /* SJResultScene.cpp in Sources */,
@@ -1160,6 +1173,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33CB191D1B5A490E002024A2 /* SJLanguage.cpp in Sources */,
 				336EA0CA1B568619008D27C5 /* SJIndexScene.cpp in Sources */,
 				336EA0CB1B568619008D27C5 /* SJGameScene.cpp in Sources */,
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
